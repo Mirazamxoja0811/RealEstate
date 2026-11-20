@@ -23,7 +23,7 @@
 - [x] **Task 1.4:** Telegram Mini App UI/UX oqimi va ekranlarini loyihalash (`docs/04_telegram_mini_app_ui_ux.md`).
 - [x] **Task 1.5:** Cloud Deploy (Docker, Nginx) va xavfsizlik arxitekturasini loyihalash (`docs/05_cloud_deploy_security.md`).
 - [x] **Task 1.6:** Loyiha papkalar strukturasini tashkil etish (`backend/`, `frontend/`, `docs/`, `tasks/`).
-- [ ] **Task 1.7:** Git repozitoriyasini ishga tushirish, `.gitignore` va boshlang'ich commitni amalga oshirish.
+- [x] **Task 1.7:** Git repozitoriyasini ishga tushirish, `.gitignore` va boshlang'ich commitni amalga oshirish.
 
 ---
 

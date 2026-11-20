@@ -7,8 +7,8 @@
 ---
 
 ## 📌 Hozirda qilinayotgan ish (Active Task)
-* **Joriy Faol Vazifa:** `Task 1.6 & Task 1.7` — Loyiha kataloglari skeletini shakllantirish, Git va loyiha asosini bog'lash.
-* **Maqsad:** Audio talablariga muvofiq Frontend va Backend qatlamlarini to'liq ajratish, hujjatlashtirish tizimini (Docs -> Task -> Info -> Handoff) ishga tushirish.
+* **Joriy Faol Vazifa:** `Faza 2: Backend Core & Multi-Tenant Baza Infratuzilmasi` (Task 2.1 va 2.2).
+* **Maqsad:** `backend/` papkasida TypeScript + Express/NestJS loyihasini o'rnatish, Prisma ORM ni sozlash va `schema.prisma` ni joylashtirish.
 
 ---
 
@@ -24,6 +24,6 @@
 ---
 
 ## ⚡ Qisqa muddatli keyingi qadamlar
-1. `backend/` va `frontend/` asosiy papkalarini va `.gitignore` faylini shakllantirish.
-2. Dastlabki commitni Git ga muhrlash.
-3. Faza 2 (Backend Core & Prisma) ga o'tish.
+1. `backend/` papkasida `package.json`, `tsconfig.json` va asosiy bog'liqliklarni (Prisma, Express, TypeScript, ts-node-dev) sozlash.
+2. `prisma/schema.prisma` ni yaratish va bazaga ulanish tayyorgarligi.
+3. Backend xizmatining start scriptlarini sinash.

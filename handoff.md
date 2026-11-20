@@ -61,24 +61,22 @@ c:\Users\miraz\Desktop\New_project\
 ## 4. Amalga Oshirilgan Ishlar Jurnali (Changelog)
 
 ### Sessiya 1 (2026-11-21):
-* **Faza 1 (Arxitektura & TZ) 100% bajarildi:**
-  * Foydalanuvchi taqdim etgan audio to'liq eshitildi, tahlil qilindi va talablar aniqlandi.
-  * `docs/01_system_architecture_tz.md` yaratildi: 30 yillik tajribaga ega arxitektor darajasidagi 20x mukammal TZ yozildi.
-  * `docs/02_database_schema.md` yaratildi: Multi-tenancy, RBAC, Agency, Branch, User, Client, ClientPreference, Property, MatchResult, NotificationQueue, AuditLog modellari Prisma formatida ishlab chiqildi.
-  * `docs/03_smart_matching_engine.md` yaratildi: Ikki tomonlama (Forward va Reverse) matching algoritmi, ball hisoblash formulasi ($S_{total}$ vaznli koeffitsientlar), anti-spam va SMS yetkazish mexanizmi yozildi.
-  * `docs/04_telegram_mini_app_ui_ux.md` yaratildi: Telegram WebApp UI/UX oqimi, katalog rejimi, rieltor va xaridor formalari, Telegram SDK imkoniyatlari bayon etildi.
-  * `docs/05_cloud_deploy_security.md` yaratildi: Docker Compose, Nginx SSL, HMAC-SHA256 Telegram autentifikatsiyasi, telefon raqamlarini niqoblash (Phone Masking) va server hisob-kitoblari keltirildi.
-  * `tasks/task_list.md` va `info.md` yaratildi.
-  * Loyiha papkasida Git initsializatsiya qilindi.
+* **Faza 1 (Arxitektura, TZ & Skelet) 100% muvaffaqiyatli yakunlandi:**
+  * Audio talablari asosida 5 ta to'liq arxitektura va texnik topshiriq hujjati yaratildi (`docs/`).
+  * `tasks/task_list.md` da 6 ta fazaga bo'lingan aniq harakatlar rejasi belgilandi.
+  * `info.md` da joriy faol vazifa ko'rsatildi.
+  * Loyihada Git initsializatsiya qilindi, `.gitignore` va `README.md` qo'shildi.
+  * `backend/` va `frontend/` papkalari izolyatsiya qilingan holda yaratildi.
+  * Barcha o'zgarishlar Git ga muhrlandi (`feat(docs): initialize project architecture...`).
 
 ---
 
 ## 5. Joriy Holat va Keyingi AI Qadami (Next Steps)
 
-* **Hozirgi holat:** Faza 1 to'liq yakunlandi.
-* **Keyingi qadam (Immediate Next Step):**
-  * `backend/` papkasida loyiha initsializatsiyasini boshlash (`package.json`, TypeScript, Prisma o'rnatish va `schema.prisma` ni yaratish).
-  * `frontend/` papkasi skeletini hozirlash.
-  * `.gitignore` faylini yaratib, Faza 1 natijalarini Git ga birinchi commit bilan saqlash.
+* **Hozirgi holat:** Faza 1 to'liq yakunlandi. Navbat **Faza 2: Backend Core & Multi-Tenant Baza Infratuzilmasi** ga keldi.
+* **Keyingi aniq topshiriq (Immediate Next Step):**
+  * `Task 2.1`: `backend/` papkasida TypeScript + Express loyihasini initsializatsiya qilish (`package.json`, `tsconfig.json`).
+  * `Task 2.2`: `backend/prisma/schema.prisma` ni yaratish va Prisma Client ni sozlash.
+  * `Task 2.3`: Telegram WebApp `initData` tekshiruvi (HMAC-SHA256) va JWT Auth modulini yozish.
 
-Har qanday yangi AI modeli ushbu nuqtadan to'g'ridan-to'g'ri `Task 2.1` va `Task 2.2` ni bajarishga kirishishi lozim.
+Har qanday yangi AI modeli yoki sessiya ushbu nuqtadan to'g'ridan-to'g'ri `Task 2.1` ni boshlashi lozim.
