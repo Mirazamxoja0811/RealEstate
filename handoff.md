@@ -60,23 +60,65 @@ c:\Users\miraz\Desktop\New_project\
 
 ## 4. Amalga Oshirilgan Ishlar Jurnali (Changelog)
 
-### Sessiya 1 (2026-11-21):
+### Sessiya 1 & 2 (2026-11-21):
 * **Faza 1 (Arxitektura, TZ & Skelet) 100% muvaffaqiyatli yakunlandi:**
-  * Audio talablari asosida 5 ta to'liq arxitektura va texnik topshiriq hujjati yaratildi (`docs/`).
-  * `tasks/task_list.md` da 6 ta fazaga bo'lingan aniq harakatlar rejasi belgilandi.
-  * `info.md` da joriy faol vazifa ko'rsatildi.
-  * Loyihada Git initsializatsiya qilindi, `.gitignore` va `README.md` qo'shildi.
-  * `backend/` va `frontend/` papkalari izolyatsiya qilingan holda yaratildi.
-  * Barcha o'zgarishlar Git ga muhrlandi (`feat(docs): initialize project architecture...`).
+  * 5 ta batafsil arxitektura va texnik topshiriq hujjati yaratildi (`docs/`).
+  * `tasks/task_list.md` va `info.md` tayyorlandi.
+  * Git repo initsializatsiya qilindi.
+* **Faza 2 (Backend Core & Prisma) 100% yakunlandi:**
+  * `backend/` da Node.js + TypeScript + Express arxitekturasi o'rnatildi.
+  * `backend/prisma/schema.prisma` ga barcha relyatsion modellar va indekslar kiritildi, Prisma Client (`@prisma/client`) generatsiya qilindi.
+  * Telegram `initData` kriptografik tekshiruvi (HMAC-SHA256) va JWT Auth middleware'lari joriy etildi.
+  * Multi-tenant middleware va RBAC (SuperAdmin, AgencyAdmin, BranchManager, Realtor) himoyasi o'rnatildi.
+  * Audit logging tizimi yaratildi (`recordAuditLog`).
+* **Faza 3 (Properties & Clients CRUD) 100% yakunlandi:**
+  * Mulklar (Property) CRUD va murakkab filtrlash (narx oralig'i, xonalar soni, tuman, bitim turi).
+  * Telefon raqamlarini ruxsatsiz shaxslardan maxfiylashtirish (Phone Masking) funksiyasi.
+  * Mijozlar (Oluvchi, Beruvchi, Ijarachi) va xaridor talablari (ClientPreferences) kiritish logikasi.
+* **Faza 4 (Smart Matching Engine & SMS Gateway) 100% yakunlandi:**
+  * Scoring algoritmi ($S_{total}$ vaznli formula) ishlab chiqildi.
+  * Asinxron Reverse Matching (yangi mulk kiritilganda o'tmishdagi barcha mos xaridorlarni topish) va Forward Matching (yangi xaridor kiritilganda mos uylarni ko'rsatish) ulandi.
+  * Eskiz.uz SMS integratsiyasi, anti-spam va tungi jimlik (Quiet Hours) qoidalari joriy etildi.
+* **Faza 5 (Telegram Mini App Frontend) 100% yakunlandi:**
+  * `frontend/` da Vite + React 18 + TypeScript + Tailwind CSS o'rnatildi.
+  * Telegram WebApp SDK (`@twa-dev/sdk`), Haptic Feedback, Telegram mavzusi ulandi.
+  * Rieltor Katalogi (PropertyCard, filtrlar, xonalar bo'yicha saralash), Mulk kartasi modali (PropertyDetailModal) yaratildi.
+  * Yangi mulk kiritish (AddPropertyModal) va yangi xaridor qo'shish (AddClientModal) formalari yaratildi.
+  * Smart Matching ekrani (MatchingView) orqali xaridorga 1 bosishda mos uylarni ko'rsatish va SMS yuborish interfeysi ishga tushirildi.
+  * Frontend to'liq build bo'ldi (`frontend/dist/` yaratildi).
+* **Faza 6 (DevOps & Deploy) 100% yakunlandi:**
+  * `docker-compose.yml`, `backend/Dockerfile`, `backend/Dockerfile.worker`, `nginx/conf.d/default.conf` va `scripts/init-db.sql` tayyorlandi.
 
 ---
 
-## 5. Joriy Holat va Keyingi AI Qadami (Next Steps)
+## 5. Loyihani Ishga Tushirish Qo'llanmasi (How to Run)
 
-* **Hozirgi holat:** Faza 1 to'liq yakunlandi. Navbat **Faza 2: Backend Core & Multi-Tenant Baza Infratuzilmasi** ga keldi.
-* **Keyingi aniq topshiriq (Immediate Next Step):**
-  * `Task 2.1`: `backend/` papkasida TypeScript + Express loyihasini initsializatsiya qilish (`package.json`, `tsconfig.json`).
-  * `Task 2.2`: `backend/prisma/schema.prisma` ni yaratish va Prisma Client ni sozlash.
-  * `Task 2.3`: Telegram WebApp `initData` tekshiruvi (HMAC-SHA256) va JWT Auth modulini yozish.
+### Backendni ishga tushirish (Local):
+```bash
+cd backend
+npm run dev
+# Server: http://localhost:4000
+# Health check: http://localhost:4000/api/health
+```
 
-Har qanday yangi AI modeli yoki sessiya ushbu nuqtadan to'g'ridan-to'g'ri `Task 2.1` ni boshlashi lozim.
+### Frontend / Telegram Mini App ni ishga tushirish (Local):
+```bash
+cd frontend
+npm run dev
+# Mini App: http://localhost:3000
+```
+
+### Docker Compose orqali to'liq tizimni ko'tarish (Production):
+```bash
+docker compose up -d --build
+```
+
+---
+
+## 6. Joriy Holat va Keyingi AI Qadami (Next Steps)
+
+* **Hozirgi holat:** CRM/ERP platformasining barcha backend, frontend, matching va deploy modullari muvaffaqiyatli qurildi va build qilindi.
+* **Keyingi qadamlar (Opsional):**
+  * Haqiqiy Telegram Bot tokeni va Eskiz.uz hisobini `.env` ga biriktirib, jonli serverda yoki ngrok orqali Telegramda sinovdan o'tkazish.
+  * Haqiqiy PostgreSQL bazasiga `npx prisma migrate dev` ni amalga oshirish.
+

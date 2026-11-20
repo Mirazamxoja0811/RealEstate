@@ -7,8 +7,10 @@
 ---
 
 ## 📌 Hozirda qilinayotgan ish (Active Task)
-* **Joriy Faol Vazifa:** `Faza 2: Backend Core & Multi-Tenant Baza Infratuzilmasi` (Task 2.1 va 2.2).
-* **Maqsad:** `backend/` papkasida TypeScript + Express/NestJS loyihasini o'rnatish, Prisma ORM ni sozlash va `schema.prisma` ni joylashtirish.
+* **Joriy Status:** Barcha asosiy fazalar (Faza 1 dan Faza 6 gacha) to'liq amalga oshirildi!
+* **Backend:** TypeScript + Express + Prisma ORM + JWT/Telegram HMAC Auth + Smart Matching Engine + SMS Gateway muvaffaqiyatli build bo'ldi (`dist/`).
+* **Frontend:** Vite + React + TypeScript + Tailwind CSS + Telegram WebApp SDK to'liq build bo'ldi (`dist/`).
+* **DevOps:** Dockerfile (Backend & Worker), docker-compose.yml va Nginx SSL konfiguratsiyasi tayyor.
 
 ---
 
@@ -20,10 +22,3 @@
 * **Deploy va Xavfsizlik:** `docs/05_cloud_deploy_security.md`
 * **Bajariladigan ishlar ro'yxati:** `tasks/task_list.md`
 * **Uzluksiz xotira (Handoff):** `handoff.md`
-
----
-
-## ⚡ Qisqa muddatli keyingi qadamlar
-1. `backend/` papkasida `package.json`, `tsconfig.json` va asosiy bog'liqliklarni (Prisma, Express, TypeScript, ts-node-dev) sozlash.
-2. `prisma/schema.prisma` ni yaratish va bazaga ulanish tayyorgarligi.
-3. Backend xizmatining start scriptlarini sinash.
